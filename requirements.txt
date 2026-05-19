@@ -2,7 +2,7 @@ streamlit
 opencv-python-headless
 numpy
 pillow
-tensorflow-cpu
+tensorflow
 mtcnn
 pillow-heif
 moviepy
