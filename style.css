@@ -1,0 +1,196 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@600;700;800&display=swap');
+
+:root {
+    --bg: #080B14;
+    --bg2: #0E1220;
+    --card: rgba(255,255,255,0.05);
+    --border: rgba(255,255,255,0.09);
+    --accent: #4ECDC4;
+    --purple: #A855F7;
+    --pink: #EC4899;
+    --green: #22D3AE;
+    --text: #E2E8F0;
+    --muted: #64748B;
+    --radius: 14px;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html, body, [data-testid="stAppViewContainer"] {
+    background: var(--bg) !important;
+    font-family: 'Inter', sans-serif !important;
+    color: var(--text) !important;
+}
+
+#MainMenu, footer, [data-testid="stDecoration"] { display: none !important; }
+
+/* ── Background gradient ── */
+[data-testid="stAppViewContainer"] > .main {
+    background:
+        radial-gradient(ellipse 70% 40% at 20% 0%, rgba(78,205,196,0.07) 0%, transparent 60%),
+        radial-gradient(ellipse 50% 35% at 85% 85%, rgba(168,85,247,0.07) 0%, transparent 55%),
+        var(--bg) !important;
+}
+.block-container { padding: 2rem 2rem 4rem !important; max-width: 1100px !important; }
+
+/* ── Typography ── */
+h1 {
+    font-family: 'Space Grotesk', sans-serif !important;
+    font-size: 2.4rem !important; font-weight: 800 !important;
+    background: linear-gradient(120deg, var(--accent), var(--purple), var(--pink));
+    -webkit-background-clip: text !important; -webkit-text-fill-color: transparent !important;
+    background-clip: text !important; margin-bottom: 0.3rem !important;
+}
+h2, h3 { font-family: 'Space Grotesk', sans-serif !important; color: var(--text) !important; }
+h3 { font-size: 1.1rem !important; font-weight: 600 !important; color: #94A3B8 !important; margin-bottom: 1rem !important; }
+
+/* ── Sidebar ── */
+[data-testid="stSidebar"] {
+    background: var(--bg2) !important;
+    border-right: 1px solid var(--border) !important;
+}
+[data-testid="stSidebar"] .block-container { padding: 1.5rem 1.2rem !important; }
+[data-testid="stSidebar"] p,
+[data-testid="stSidebar"] label,
+[data-testid="stSidebar"] span,
+[data-testid="stSidebar"] div { color: var(--text) !important; font-size: 0.88rem !important; }
+[data-testid="stSidebar"] h1,
+[data-testid="stSidebar"] h2,
+[data-testid="stSidebar"] h3 {
+    color: var(--accent) !important; font-size: 0.78rem !important;
+    text-transform: uppercase; letter-spacing: 1.5px;
+    -webkit-text-fill-color: var(--accent) !important;
+    background: none !important; margin-bottom: 0.8rem !important;
+}
+[data-testid="stSidebar"] hr { border-color: var(--border) !important; margin: 1.2rem 0 !important; }
+
+/* ── Tabs ── */
+button[data-baseweb="tab"] {
+    font-family: 'Space Grotesk', sans-serif !important;
+    font-weight: 600 !important; color: var(--muted) !important;
+    background: transparent !important; border: none !important;
+    padding: 0.65rem 1.3rem !important; font-size: 0.92rem !important;
+    transition: color 0.2s ease !important;
+}
+button[data-baseweb="tab"]:hover { color: var(--accent) !important; }
+button[data-baseweb="tab"][aria-selected="true"] {
+    color: var(--accent) !important;
+    border-bottom: 2px solid var(--accent) !important;
+}
+
+/* ── Buttons ── */
+[data-testid="stButton"] button[kind="primary"] {
+    background: linear-gradient(135deg, var(--accent), var(--purple)) !important;
+    color: #fff !important; font-family: 'Space Grotesk', sans-serif !important;
+    font-weight: 700 !important; font-size: 0.95rem !important;
+    border: none !important; border-radius: 10px !important;
+    padding: 0.65rem 1.5rem !important;
+    box-shadow: 0 4px 18px rgba(78,205,196,0.25) !important;
+    transition: all 0.2s ease !important;
+}
+[data-testid="stButton"] button[kind="primary"]:hover {
+    transform: translateY(-2px) !important;
+    box-shadow: 0 8px 28px rgba(78,205,196,0.40) !important;
+}
+[data-testid="stDownloadButton"] button {
+    background: rgba(34,211,174,0.10) !important;
+    color: var(--green) !important; border: 1px solid rgba(34,211,174,0.35) !important;
+    border-radius: 10px !important; font-weight: 600 !important;
+    transition: all 0.2s ease !important;
+}
+[data-testid="stDownloadButton"] button:hover {
+    background: rgba(34,211,174,0.18) !important;
+    box-shadow: 0 0 20px rgba(34,211,174,0.3) !important;
+}
+
+/* ── File uploader ── */
+[data-testid="stFileUploader"] {
+    background: var(--card) !important; border: 1.5px dashed var(--border) !important;
+    border-radius: var(--radius) !important; transition: all 0.25s ease !important;
+}
+[data-testid="stFileUploader"]:hover {
+    border-color: var(--accent) !important;
+    background: rgba(78,205,196,0.04) !important;
+}
+[data-testid="stFileUploader"] label,
+[data-testid="stFileUploader"] p,
+[data-testid="stFileUploader"] span { color: var(--muted) !important; }
+
+/* ── Sliders ── */
+[data-testid="stSlider"] label { color: var(--text) !important; }
+[data-baseweb="slider"] [role="slider"] {
+    background: var(--accent) !important;
+    box-shadow: 0 0 8px var(--accent) !important;
+}
+
+/* ── Select / Radio ── */
+[data-baseweb="select"] > div {
+    background: var(--card) !important; border-color: var(--border) !important;
+    border-radius: 8px !important; color: var(--text) !important;
+}
+[data-baseweb="select"] > div:hover { border-color: var(--accent) !important; }
+[data-baseweb="select"] span { color: var(--text) !important; }
+[data-baseweb="popover"] { background: var(--bg2) !important; border: 1px solid var(--border) !important; }
+[data-baseweb="menu"] li { color: var(--text) !important; }
+[data-baseweb="menu"] li:hover { background: rgba(78,205,196,0.1) !important; }
+
+/* ── Checkboxes ── */
+[data-testid="stCheckbox"] label span { color: var(--text) !important; }
+
+/* ── Metrics ── */
+[data-testid="stMetric"] {
+    background: var(--card) !important; border: 1px solid var(--border) !important;
+    border-radius: var(--radius) !important; padding: 1rem 1.2rem !important;
+}
+[data-testid="stMetricValue"] {
+    color: var(--accent) !important; font-family: 'Space Grotesk', sans-serif !important;
+    font-weight: 700 !important; font-size: 1.8rem !important;
+}
+[data-testid="stMetricLabel"] { color: var(--muted) !important; font-size: 0.78rem !important; text-transform: uppercase; letter-spacing: 0.8px; }
+
+/* ── Alerts ── */
+[data-testid="stAlert"] { 
+    border-radius: var(--radius) !important; 
+    border: none !important;
+    margin-top: 1.5rem !important;
+    max-width: 95% !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
+/* ── Progress ── */
+[data-testid="stProgress"] > div > div > div {
+    background: linear-gradient(90deg, var(--accent), var(--purple)) !important;
+    border-radius: 99px !important;
+}
+[data-testid="stProgress"] > div > div {
+    background: rgba(255,255,255,0.08) !important; border-radius: 99px !important;
+}
+
+/* ── Images ── */
+[data-testid="stImage"] img {
+    border-radius: var(--radius) !important;
+    border: 1px solid var(--border) !important;
+    transition: border-color 0.2s ease !important;
+}
+[data-testid="stImage"] img:hover { border-color: var(--accent) !important; }
+
+/* ── Columns ── */
+[data-testid="column"] {
+    background: var(--card) !important;
+    border: 1px solid var(--border) !important;
+    border-radius: var(--radius) !important;
+    padding: 1.2rem !important;
+}
+
+/* ── Scrollbar ── */
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--accent); }
+
+/* ── Animations ── */
+@keyframes fadeUp { from { opacity:0; transform:translateY(12px); } to { opacity:1; transform:translateY(0); } }
+[data-testid="column"], [data-testid="stAlert"], [data-testid="stMetric"] {
+    animation: fadeUp 0.35s ease forwards;
+}

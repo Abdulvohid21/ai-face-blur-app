@@ -1,0 +1,9 @@
+streamlit
+opencv-python
+opencv-python-headless
+numpy
+pillow
+tensorflow
+mtcnn
+pillow-heif
+moviepy
